@@ -31,6 +31,7 @@ Sub stockData()
         For i = 2 To lastRow
             If ws.Cells(i, 1).Value = ticker And ws.Cells(i - 1, 1).Value <> ticker Then
                 openPrice = ws.Cells(i, 3).Value
+                volume = volume + ws.Cells(i, 7).Value
             ElseIf ws.Cells(i, 1).Value = ticker Then
                 volume = volume + ws.Cells(i, 7).Value
                 closePrice = ws.Cells(i, 6).Value
